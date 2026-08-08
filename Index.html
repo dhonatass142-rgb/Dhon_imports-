@@ -170,7 +170,7 @@
                     if (emailVal === ADMIN_CONFIG.email && passVal === ADMIN_CONFIG.pass) {
                         localStorage.setItem('dhon_admin_logged', 'true');
                         alert('Login de Administrador efetuado com sucesso!');
-                        window.location.href = 'index.html';
+                        window.location.href = 'home.html'; // Redireciona para a home após logar como admin
                         return;
                     }
 
@@ -181,7 +181,7 @@
                     if (validUser) {
                         localStorage.setItem('dhon_user_logged', validUser.name);
                         alert(`Bem-vindo de volta, ${validUser.name}!`);
-                        window.location.href = 'index.html';
+                        window.location.href = 'home.html'; // Redireciona para a home após logar como cliente
                     } else {
                         alert('E-mail ou senha incorretos!');
                     }
