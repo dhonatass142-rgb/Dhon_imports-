@@ -908,7 +908,7 @@
     </div>
 
     <script>
-        // CONFIGURAÇÃO DO FIREBASE (Com suas credenciais reais inseridas)
+        // CONFIGURAÇÃO DO FIREBASE
         const firebaseConfig = {
             apiKey: "AIzaSyDoc3N8jIBbIbo2WKy7hvFt-muPbv2UTwo",
             authDomain: "dhon-imports.firebaseapp.com",
@@ -962,7 +962,6 @@
             const cartTotal = document.getElementById('cart-total');
             const checkoutBtn = document.getElementById('checkout-btn');
 
-            // Monitorar estado de autenticação do Firebase
             auth.onAuthStateChanged((user) => {
                 if (user) {
                     isAdminLoggedIn = true;
@@ -978,7 +977,6 @@
                 renderProducts(products, productsContainer);
             });
 
-            // Carregar produtos do Firestore em tempo real
             db.collection('products').onSnapshot((snapshot) => {
                 products = [];
                 snapshot.forEach((doc) => {
